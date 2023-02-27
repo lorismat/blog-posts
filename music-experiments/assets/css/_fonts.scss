@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'lato';
+  src: url('@/assets/fonts/lato/Lato-Thin.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('@/assets/fonts/lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('@/assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$font: 'lato', sans-serif;
+

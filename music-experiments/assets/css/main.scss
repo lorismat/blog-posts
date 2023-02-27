@@ -1,0 +1,35 @@
+@import 'colors';
+@import 'fonts';
+
+body {
+  background-color: $black;
+  color: $white;
+  margin:0;
+}
+
+// create a mixin that I can use to customize my button
+@mixin btn() {
+  font-size: 12px;
+  text-transform: uppercase;
+  position: absolute;
+  padding: 10px 20px;
+  width: 80px;
+  text-align: center;
+  border: 2px solid $black;
+  z-index: 10;
+  background-color: $black;
+  color: $white;
+  font-family: $font;
+  cursor: pointer;
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+}
+
+@mixin center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

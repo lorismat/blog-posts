@@ -1,0 +1,11 @@
+$white: #ffffff;
+$black: #101010;
+$primary: blue;
+$secondary: green;
+
+// for js access via
+// getComputedStyle(document.documentElement).getPropertyValue('--white');
+
+:root {
+  --white: #{$white};
+}
