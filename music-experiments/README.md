@@ -3,7 +3,7 @@
 [Live Experiment 1](http://meyda-shaders-viz.surge.sh/)  
 [Live Experiment 2](http://meyda-shaders-viz.surge.sh/2)  
 
-I describe the process of creating music experiments in [a blog article](https://www.lorismat.com/blog/path-reveal-on-a-map) with sound analysis using `Meyda.js` and `Three.js`.
+I describe the process of creating music experiments in [a blog article](https://www.lorismat.com/blog/music-experiments) with sound analysis using `Meyda.js` and `Three.js`.
 
 # Spec
 
