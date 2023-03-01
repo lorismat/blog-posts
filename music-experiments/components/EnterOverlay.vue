@@ -2,11 +2,11 @@
   <div>
     <div>
       <audio id="audio" controls loop>
-        <source src="sound/1.mp3" type="audio/mpeg">
+        <source :src="file" type="audio/mpeg">
       </audio>
     </div>
-    <div id="overlay">
-      <div @click="enter" class="enter-btn">
+    <div id="overlay" :style="{ 'background-color': props.theme == 'dark' ? `#fff` : '#000' }">
+      <div @click="enter" :class="props.theme == 'dark' ? 'btn-dark enter-btn' : 'btn-light enter-btn'">
         Enter
       </div>
     </div>
@@ -20,9 +20,21 @@ function enter() {
   document.querySelector('#overlay').style.display = 'none';
 }
 
+const props = defineProps({
+  file: {
+    type: String,
+    required: true
+  },
+  theme: {
+    type: String,
+    required: true
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
+
 audio {
   display: none;
 }
@@ -33,12 +45,10 @@ audio {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: $secondary;
   z-index: 20;
 }
 
 .enter-btn {
-  @include btn;
   @include center;
 }
 

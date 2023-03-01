@@ -1,10 +1,18 @@
 <template>
-  <div @click="playPause" class="btn">
+  <div @click="playPause" :class="props.theme == 'dark' ? 'btn-dark' : 'btn-light'">
     {{ btn }}
   </div>
 </template>
 
 <script setup>
+
+const props = defineProps({
+  theme: {
+    type: String,
+    required: true
+  }
+});
+
 const btn = ref('pause');
 
 function playPause() {
@@ -19,12 +27,3 @@ function playPause() {
 }
 
 </script>
-
-<style lang="scss" scoped>
-
-.btn {
-  @include btn;
-  margin: 20px;
-}
-
-</style>

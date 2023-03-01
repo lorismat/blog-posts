@@ -1,35 +1,28 @@
 # Music Experiments
 
-**Nuxt application**  
-`npm install` to download the dependencies  
+[Live Experiment 1](http://meyda-shaders-viz.surge.sh/)  
+[Live Experiment 2](http://meyda-shaders-viz.surge.sh/2)  
+
+I describe the process of creating music experiments in [a blog article](https://www.lorismat.com/blog/path-reveal-on-a-map) with sound analysis using `Meyda.js` and `Three.js`.
+
+# Spec
+
+This repository is hosting a **Nuxt application**.  
+
+`npm install` to download the dependencies.   
 `npm run dev` to start the development server.  
 
-# Steps
+## TLDR
 
-- Create a simple `audio` player and hide it
-- When the audio is played, get the data with `Meyda` // [Documentation](https://meyda.js.org/guides/online-web-audio)
-- Following the doc, create an `new AudioContext()` + try it out with the core code
-- Send the data to your Canvas
-- Try one simple feature // RMS among [the list of audio features](https://meyda.js.org/audio-features)
-  example: size of the cube based on `RMS`
+- `components/EnterOverlay.vue` fetches the song
+- `pages/index.vue` and `pages/2.vue` initialize the music analyser
+- `components/Canvas1.vue` and `components/Canvas2.vue` uses the signals from the analyser for visualization
 
-  ```
-  cube.scale.x = signals.value * 10 ; //signals.rms * 100;
-  cube.scale.y = signals.value * 10 ; //signals.rms * 100;
-  cube.scale.z = signals.value * 10 ; //signals.rms * 100;
-  ```
+The process and code are described in my blog article.
 
-  problem: the value can change leading to epileptic effect. beware of the visual you offer. root mean square of the waveform. 
+# Music
 
-- building an object to store the values you are interested in (rms, zcr, )
-- remark: values have to be clamp (min/max to avoid extreme variations)
-- 
-- Try with an array: power spectrum. Here the idea is to select some frequencies in the 512 array
-- investigate [windowing](https://meyda.js.org/audio-features)
+Two songs are played, from [Nicolas Jaar](https://nicolasjaar.net/). It is mentioned that "All non-commercial use is permitted".  
 
-
-# Inspirations, 3 articles
-
-- blog from mattdesl [with frequency analysis](https://mattdesl.svbtle.com/audiograph)
-- this process [shared for audio viz](https://lusion.co/work/kaos-logo-generator)
-- meyda too [here](https://www.visualcinnamon.com/2020/06/sony-music-data-art/#final-result-animated-poster)
+- _America! I'm for the birds_, from _Sirens_ (experiment 1)
+- _Fight_, from _Nymphs_ (experiment 2)

@@ -7,24 +7,50 @@ body {
   margin:0;
 }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+   text-decoration: underline;
+  }
+}
+
 // create a mixin that I can use to customize my button
-@mixin btn() {
+@mixin btn($color: $white, $bg-color: $black) {
   font-size: 12px;
   text-transform: uppercase;
   position: absolute;
   padding: 10px 20px;
   width: 80px;
   text-align: center;
-  border: 2px solid $black;
+  border: 2px solid $bg-color;
   z-index: 10;
-  background-color: $black;
-  color: $white;
+  background-color: $bg-color;
+  color: $color;
   font-family: $font;
   cursor: pointer;
   &:hover {
-    background-color: $white;
-    color: $black;
+    background-color: $color;
+    color: $bg-color;
   }
+}
+
+.btn-light {
+  @include btn($color: $black, $bg-color: $white);
+  margin: 20px;
+}
+
+.btn-dark {
+  @include btn($color: $white, $bg-color: $black);
+  margin: 20px;
 }
 
 @mixin center() {
